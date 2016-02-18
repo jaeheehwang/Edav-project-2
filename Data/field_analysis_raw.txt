@@ -1,0 +1,807 @@
+
+File Analysis Results:
+  format type         csv
+  field count         36
+  record count        4647
+  hasheader           True
+  delimiter           ,
+  csv quoting         True
+  skipinitialspace    False
+  quoting             QUOTE_MINIMAL
+  doublequote         True
+  quotechar           "
+  lineterminator      '\n'
+  escapechar          None
+
+Field Analysis Progress: 
+   Analyzing field: 0
+   Analyzing field: 1
+   Analyzing field: 2
+   Analyzing field: 3
+   Analyzing field: 4
+   Analyzing field: 5
+   Analyzing field: 6
+   Analyzing field: 7
+   Analyzing field: 8
+   Analyzing field: 9
+   Analyzing field: 10
+   Analyzing field: 11
+   Analyzing field: 12
+   Analyzing field: 13
+   Analyzing field: 14
+   Analyzing field: 15
+   Analyzing field: 16
+   Analyzing field: 17
+   Analyzing field: 18
+   Analyzing field: 19
+   Analyzing field: 20
+   Analyzing field: 21
+   Analyzing field: 22
+   Analyzing field: 23
+   Analyzing field: 24
+   Analyzing field: 25
+   Analyzing field: 26
+   Analyzing field: 27
+   Analyzing field: 28
+   Analyzing field: 29
+   Analyzing field: 30
+   Analyzing field: 31
+   Analyzing field: 32
+   Analyzing field: 33
+   Analyzing field: 34
+   Analyzing field: 35
+
+Field Analysis Results
+
+      ------------------------------------------------------
+      Name                Register #
+      Field Number        0
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 1
+      Max                 4319
+      Unique Values       4319
+      Known Values        4318
+      Mean                2159.733673
+      Median              2159.5
+      Variance            1554533.65302
+      Std Dev             1246.80938921
+      Top Values           
+                                        x 328 occurances
+          3198                          x 1 occurances
+          3199                          x 1 occurances
+          1369                          x 1 occurances
+          478                           x 1 occurances
+          1865                          x 1 occurances
+          3190                          x 1 occurances
+          3191                          x 1 occurances
+          3192                          x 1 occurances
+          3193                          x 1 occurances
+
+      ------------------------------------------------------
+      Name                Annual DFO # (discontinued)
+      Field Number        1
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 #N/A
+      Max                 Return to DFO Homepage
+      Unique Values       781
+      Known Values        780
+      Top Values           
+                                        x 1128 occurances
+          9                             x 20 occurances
+          8                             x 20 occurances
+          10                            x 20 occurances
+          11                            x 20 occurances
+          7                             x 20 occurances
+          6                             x 20 occurances
+          44                            x 19 occurances
+          48                            x 19 occurances
+          63                            x 19 occurances
+
+      ------------------------------------------------------
+      Name                Glide #
+      Field Number        2
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 #N/A
+      Max                 Tropical cyclone
+      Unique Values       424
+      Known Values        423
+      Top Values           
+          0                             x 3892 occurances
+                                        x 320 occurances
+          FL-2006-000068-CHN            x 4 occurances
+          #N/A                          x 3 occurances
+          FL-2008-000004-NAM            x 2 occurances
+          FL-2007-000096-IND            x 2 occurances
+          FL-2007-000106-IDN            x 2 occurances
+          FL-2011-000021-MYS            x 2 occurances
+          FL-2007-000051-TUN            x 2 occurances
+          FL-2007-000123-NGA            x 2 occurances
+
+      ------------------------------------------------------
+      Name                Country
+      Field Number        3
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 ÊTajikistan
+      Unique Values       329
+      Known Values        328
+      Case                mixed
+      Min Length          2
+      Max Length          32
+      Mean Length         7.05028968714
+      Top Values           
+          USA                           x 402 occurances
+                                        x 331 occurances
+          China                         x 307 occurances
+          India                         x 210 occurances
+          Indonesia                     x 178 occurances
+          Philippines                   x 160 occurances
+          Australia                     x 115 occurances
+          Russia                        x 89 occurances
+          Vietnam                       x 89 occurances
+          Brazil                        x 86 occurances
+
+      ------------------------------------------------------
+      Name                Other
+      Field Number        4
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 #N/A
+      Max                 Zimbawe
+      Unique Values       116
+      Known Values        115
+      Top Values           
+          0                             x 4008 occurances
+                                        x 331 occurances
+          India                         x 12 occurances
+          Bangladesh                    x 11 occurances
+          Vietnam                       x 11 occurances
+          Thailand                      x 8 occurances
+          Bulgaria                      x 8 occurances
+          South Korea                   x 8 occurances
+          China                         x 7 occurances
+          Somalia                       x 7 occurances
+
+      ------------------------------------------------------
+      Name                Nations
+      Field Number        5
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 #N/A
+      Unique Values       2
+      Known Values        1
+      Case                upper
+      Min Length          4
+      Max Length          4
+      Mean Length         4.0
+      Top Values           
+          #N/A                          x 4314 occurances
+                                        x 332 occurances
+
+      ------------------------------------------------------
+      Name                Affected
+      Field Number        6
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 #N/A
+      Unique Values       2
+      Known Values        1
+      Case                upper
+      Min Length          4
+      Max Length          4
+      Mean Length         4.0
+      Top Values           
+          #N/A                          x 4315 occurances
+                                        x 331 occurances
+
+      ------------------------------------------------------
+      Name                Detailed Locations (click on a
+      Field Number        7
+      Wrong Field Cnt     0
+      Type                string
+      Min                 "53 of the country's 64 admini
+      Max                 ÊParaguay River
+      Unique Values       4154
+      Known Values        4153
+      Case                mixed
+      Min Length          1
+      Max Length          1750
+      Mean Length         96.0732446933
+      Top Values           
+                                        x 359 occurances
+          0                             x 57 occurances
+          Assam                         x 6 occurances
+          Luzon                         x 5 occurances
+          Rio de Janeiro                x 5 occurances
+          New South Wales               x 5 occurances
+          Jakarta                       x 4 occurances
+          Buenos Aires Province         x 3 occurances
+          Central Viet Nam              x 3 occurances
+          Djibouti                      x 3 occurances
+
+      ------------------------------------------------------
+      Name                Validation (post event #3503)
+      Field Number        8
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 #N/A
+      Max                 News
+      Unique Values       4
+      Known Values        3
+      Top Values           
+          0                             x 3677 occurances
+          News                          x 636 occurances
+                                        x 328 occurances
+          #N/A                          x 5 occurances
+
+      ------------------------------------------------------
+      Name                Began
+      Field Number        9
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 9-Sep-97
+      Unique Values       3200
+      Known Values        3199
+      Case                mixed
+      Min Length          4
+      Max Length          9
+      Mean Length         8.67578215527
+      Top Values           
+                                        x 331 occurances
+          20-May-98                     x 6 occurances
+          12-Jun-02                     x 6 occurances
+          8-Aug-07                      x 5 occurances
+          14-Jan-03                     x 5 occurances
+          27-Jul-10                     x 5 occurances
+          5-Mar-04                      x 5 occurances
+          24-Aug-03                     x 5 occurances
+          12-Jun-98                     x 5 occurances
+          25-Jul-97                     x 5 occurances
+
+      ------------------------------------------------------
+      Name                Ended
+      Field Number        10
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 9-Sep-98
+      Unique Values       2912
+      Known Values        2911
+      Case                mixed
+      Min Length          4
+      Max Length          9
+      Mean Length         8.70011587486
+      Top Values           
+                                        x 331 occurances
+          29-Jun-15                     x 12 occurances
+          14-Oct-13                     x 9 occurances
+          8-Sep-14                      x 9 occurances
+          11-Oct-14                     x 9 occurances
+          14-Jul-14                     x 8 occurances
+          30-Sep-10                     x 8 occurances
+          28-Oct-15                     x 8 occurances
+          6-Aug-12                      x 8 occurances
+          21-Jun-11                     x 8 occurances
+
+      ------------------------------------------------------
+      Name                Duration in Days
+      Field Number        11
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 1
+      Max                 419
+      Unique Values       110
+      Known Values        109
+      Mean                11.1528293135
+      Median              6.0
+      Variance            262.030214629
+      Std Dev             16.1873473624
+      Top Values           
+          3                             x 573 occurances
+          4                             x 486 occurances
+          2                             x 473 occurances
+          5                             x 427 occurances
+                                        x 331 occurances
+          6                             x 262 occurances
+          7                             x 234 occurances
+          8                             x 201 occurances
+          9                             x 154 occurances
+          10                            x 135 occurances
+
+      ------------------------------------------------------
+      Name                Dead
+      Field Number        12
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 0
+      Max                 160000
+      Unique Values       317
+      Known Values        316
+      Mean                153.139146568
+      Median              5.0
+      Variance            12875097.9992
+      Std Dev             3588.18867943
+      Top Values           
+          0                             x 1231 occurances
+                                        x 331 occurances
+          1                             x 235 occurances
+          2                             x 229 occurances
+          3                             x 191 occurances
+          4                             x 168 occurances
+          5                             x 130 occurances
+          6                             x 115 occurances
+          7                             x 94 occurances
+          8                             x 79 occurances
+
+      ------------------------------------------------------
+      Name                Displaced
+      Field Number        13
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 #N/A
+      Max                 984356
+      Unique Values       633
+      Known Values        632
+      Top Values           
+          0                             x 1278 occurances
+                                        x 331 occurances
+          3000                          x 142 occurances
+          10000                         x 110 occurances
+          2000                          x 106 occurances
+          300                           x 105 occurances
+          1000                          x 94 occurances
+          20000                         x 86 occurances
+          5000                          x 74 occurances
+          4000                          x 70 occurances
+
+      ------------------------------------------------------
+      Name                Damage (USD)
+      Field Number        14
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 $42,000,000
+      Max                 Ê
+      Unique Values       476
+      Known Values        475
+      Top Values           
+                                        x 3280 occurances
+          0                             x 338 occurances
+          see notes                     x 67 occurances
+          Ê                             x 25 occurances
+          3,000,000                     x 25 occurances
+          100,000,000                   x 18 occurances
+          20,000,000                    x 18 occurances
+          10,000,000                    x 16 occurances
+          1,000,000                     x 16 occurances
+          2,000,000                     x 15 occurances
+
+      ------------------------------------------------------
+      Name                Main cause
+      Field Number        15
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 snowmelt
+      Unique Values       173
+      Known Values        172
+      Case                mixed
+      Min Length          1
+      Max Length          35
+      Mean Length         12.4597914253
+      Top Values           
+          Heavy rain                    x 2129 occurances
+          Heavy Rain                    x 502 occurances
+                                        x 331 occurances
+          Tropical cyclone              x 291 occurances
+          Monsoonal rain                x 260 occurances
+          Torrential Rain               x 238 occurances
+          Brief torrential rain         x 207 occurances
+          Torrential rain               x 134 occurances
+          Monsoonal Rain                x 87 occurances
+          Snowmelt                      x 68 occurances
+
+      ------------------------------------------------------
+      Name                Severity *
+      Field Number        16
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 #N/A
+      Max                 2
+      Unique Values       5
+      Known Values        4
+      Top Values           
+          1                             x 3162 occurances
+          2                             x 715 occurances
+          1.5                           x 435 occurances
+                                        x 331 occurances
+          #N/A                          x 3 occurances
+
+      ------------------------------------------------------
+      Name                Affected sq km
+      Field Number        17
+      Wrong Field Cnt     0
+      Type                float
+      Min                 11.9565
+      Max                 4814280.64
+      Unique Values       4303
+      Known Values        4302
+      Mean                104675.465536
+      Median              31647.5
+      Variance            50668219274.3
+      Std Dev             225096.022342
+      Top Values           
+                                        x 331 occurances
+          139112.79                     x 3 occurances
+          #N/A                          x 3 occurances
+          867.248                       x 2 occurances
+          2231.31                       x 2 occurances
+          2552.4                        x 2 occurances
+          17458.8                       x 2 occurances
+          809.506                       x 2 occurances
+          5421.41                       x 2 occurances
+          1348.91                       x 2 occurances
+
+      ------------------------------------------------------
+      Name                Magnitude (M)**
+      Field Number        18
+      Wrong Field Cnt     0
+      Type                float
+      Min                 0.0
+      Max                 8.5
+      Unique Values       71
+      Known Values        70
+      Mean                5.31481567355
+      Median              5.4
+      Variance            1.22235781308
+      Std Dev             1.10560291836
+      Top Values           
+                                        x 333 occurances
+          5.6                           x 182 occurances
+          5.5                           x 164 occurances
+          5.4                           x 160 occurances
+          5.3                           x 158 occurances
+          4.8                           x 154 occurances
+          5.1                           x 152 occurances
+          5.2                           x 149 occurances
+          5.7                           x 148 occurances
+          5.8                           x 146 occurances
+
+      ------------------------------------------------------
+      Name                Centroid X
+      Field Number        19
+      Wrong Field Cnt     0
+      Type                float
+      Min                 -173.454
+      Max                 179.651
+      Unique Values       4266
+      Known Values        4265
+      Mean                35.9304322866
+      Median              44.17315
+      Variance            6320.42653755
+      Std Dev             79.5011102913
+      Top Values           
+                                        x 331 occurances
+          120.74                        x 3 occurances
+          #N/A                          x 3 occurances
+          121.229                       x 3 occurances
+          -50.4819                      x 3 occurances
+          114.116                       x 3 occurances
+          -96.0297                      x 2 occurances
+          106.847                       x 2 occurances
+          177.483                       x 2 occurances
+          106.855                       x 2 occurances
+
+      ------------------------------------------------------
+      Name                Centroid Y
+      Field Number        20
+      Wrong Field Cnt     0
+      Type                float
+      Min                 -52.8256
+      Max                 68.1591
+      Unique Values       4265
+      Known Values        4264
+      Mean                18.5417525851
+      Median              21.8321
+      Variance            517.191563794
+      Std Dev             22.7418460947
+      Top Values           
+                                        x 331 occurances
+          #N/A                          x 3 occurances
+          24.8678                       x 3 occurances
+          -11.8781                      x 3 occurances
+          26.6059                       x 2 occurances
+          29.6764                       x 2 occurances
+          -33.0922                      x 2 occurances
+          23.9413                       x 2 occurances
+          37.4727                       x 2 occurances
+          34.0959                       x 2 occurances
+
+      ------------------------------------------------------
+      Name                "News" if validated
+      Field Number        21
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 x
+      Unique Values       5
+      Known Values        4
+      Case                mixed
+      Min Length          1
+      Max Length          4
+      Mean Length         3.98548387097
+      Top Values           
+                                        x 4026 occurances
+          News                          x 600 occurances
+          #N/A                          x 16 occurances
+          x                             x 3 occurances
+          news                          x 1 occurances
+
+      ------------------------------------------------------
+      Name                M>6
+      Field Number        22
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 0
+      Max                 1
+      Unique Values       3
+      Known Values        2
+      Mean                0.269061413673
+      Median              0.0
+      Variance            0.196667369345
+      Std Dev             0.443471948769
+      Top Values           
+          0                             x 3154 occurances
+          1                             x 1161 occurances
+                                        x 331 occurances
+
+      ------------------------------------------------------
+      Name                Total annual floods M>6
+      Field Number        23
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 0
+      Max                 100
+      Unique Values       102
+      Known Values        101
+      Mean                23.9962920046
+      Median              21.0
+      Variance            323.925826343
+      Std Dev             17.9979395027
+      Top Values           
+                                        x 331 occurances
+          4                             x 133 occurances
+          18                            x 131 occurances
+          20                            x 120 occurances
+          1                             x 118 occurances
+          16                            x 118 occurances
+          9                             x 114 occurances
+          2                             x 114 occurances
+          7                             x 110 occurances
+          11                            x 105 occurances
+
+      ------------------------------------------------------
+      Name                M>4
+      Field Number        24
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 0
+      Max                 1
+      Unique Values       3
+      Known Values        2
+      Mean                0.877404403244
+      Median              1.0
+      Variance            0.107565916412
+      Std Dev             0.327972432396
+      Top Values           
+          1                             x 3786 occurances
+          0                             x 529 occurances
+                                        x 331 occurances
+
+      ------------------------------------------------------
+      Name                Total annual floods M>4
+      Field Number        25
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 0
+      Max                 215
+      Unique Values       217
+      Known Values        216
+      Mean                72.8558516802
+      Median              66.0
+      Variance            2454.13820156
+      Std Dev             49.5392591947
+      Top Values           
+                                        x 331 occurances
+          12                            x 38 occurances
+          13                            x 38 occurances
+          3                             x 37 occurances
+          27                            x 37 occurances
+          9                             x 36 occurances
+          15                            x 36 occurances
+          35                            x 36 occurances
+          33                            x 36 occurances
+          39                            x 36 occurances
+
+      ------------------------------------------------------
+      Name                Date Began
+      Field Number        26
+      Wrong Field Cnt     0
+      Type                string
+      Min                 #N/A
+      Max                 31-Oct-98
+      Unique Values       3200
+      Known Values        3199
+      Case                mixed
+      Min Length          4
+      Max Length          9
+      Mean Length         8.99652375435
+      Top Values           
+                                        x 331 occurances
+          20-May-98                     x 6 occurances
+          12-Jun-02                     x 6 occurances
+          14-Jan-03                     x 5 occurances
+          05-Mar-04                     x 5 occurances
+          27-Jul-10                     x 5 occurances
+          08-Aug-07                     x 5 occurances
+          24-Aug-03                     x 5 occurances
+          12-Jun-98                     x 5 occurances
+          25-Jul-97                     x 5 occurances
+
+      ------------------------------------------------------
+      Name                Total floods M>6
+      Field Number        27
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 0
+      Max                 1162
+      Unique Values       1164
+      Known Values        1163
+      Mean                511.783464567
+      Median              474.5
+      Variance            100034.628193
+      Std Dev             316.282513259
+      Top Values           
+                                        x 328 occurances
+          464                           x 39 occurances
+          168                           x 26 occurances
+          59                            x 24 occurances
+          409                           x 23 occurances
+          403                           x 23 occurances
+          346                           x 23 occurances
+          424                           x 22 occurances
+          78                            x 21 occurances
+          123                           x 20 occurances
+
+      ------------------------------------------------------
+      Name                Total floods M>4
+      Field Number        28
+      Wrong Field Cnt     0
+      Type                integer
+      Min                 1
+      Max                 3786
+      Unique Values       3787
+      Known Values        3786
+      Mean                1870.09958314
+      Median              1875.5
+      Variance            1126906.20176
+      Std Dev             1061.55838358
+      Top Values           
+                                        x 328 occurances
+          1591                          x 6 occurances
+          1951                          x 6 occurances
+          1644                          x 5 occurances
+          2011                          x 5 occurances
+          1737                          x 5 occurances
+          1584                          x 5 occurances
+          1838                          x 5 occurances
+          1904                          x 5 occurances
+          182                           x 4 occurances
+
+      ------------------------------------------------------
+      Name                Notes and Comments (may includ
+      Field Number        29
+      Wrong Field Cnt     0
+      Type                string
+      Min                 " "Families have lost their be
+      Max                 Ê2,000 homes destroyed.
+      Unique Values       3781
+      Known Values        3780
+      Case                mixed
+      Min Length          1
+      Max Length          25633
+      Mean Length         807.389786347
+      Top Values           
+                                        x 808 occurances
+          Flooding and landslides.      x 33 occurances
+          Flooding and mudslides.       x 12 occurances
+          No suitable AVHRR data locatedx 6 occurances
+          Flooding attributed to El Ninox 2 occurances
+          Flash floods.                 x 2 occurances
+          Many homes destroyed.         x 2 occurances
+          0                             x 2 occurances
+          Flooding and landslide.       x 2 occurances
+          No suitable AVHRR data locatedx 2 occurances
+
+      ------------------------------------------------------
+      Name                
+      Field Number        30
+      Wrong Field Cnt     0
+      Type                string
+      Min                 `1
+      Max                 `1
+      Unique Values       2
+      Known Values        1
+      Case                mixed
+      Min Length          2
+      Max Length          2
+      Mean Length         2.0
+      Top Values           
+                                        x 4645 occurances
+          `1                            x 1 occurances
+
+      ------------------------------------------------------
+      Name                
+      Field Number        31
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 None
+      Max                 None
+      Unique Values       1
+      Known Values        0
+      Top Values           
+                                        x 4646 occurances
+
+      ------------------------------------------------------
+      Name                
+      Field Number        32
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 None
+      Max                 None
+      Unique Values       1
+      Known Values        0
+      Top Values           
+                                        x 4646 occurances
+
+      ------------------------------------------------------
+      Name                
+      Field Number        33
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 None
+      Max                 None
+      Unique Values       1
+      Known Values        0
+      Top Values           
+                                        x 4646 occurances
+
+      ------------------------------------------------------
+      Name                
+      Field Number        34
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 None
+      Max                 None
+      Unique Values       1
+      Known Values        0
+      Top Values           
+                                        x 4646 occurances
+
+      ------------------------------------------------------
+      Name                
+      Field Number        35
+      Wrong Field Cnt     0
+      Type                unknown
+      Min                 None
+      Max                 None
+      Unique Values       1
+      Known Values        0
+      Top Values           
+                                        x 4646 occurances
