@@ -1,0 +1,277 @@
+---
+title: "Untitled"
+author: "Jae Hee Hwang"
+date: "March 1, 2016"
+output: html_document
+---
+
+
+```{r}
+
+setwd("/Users/jaeheehwang/Documents/gelman/")
+# Import Data
+library(plotly)
+library(ggplot2)
+library(package = "lattice")
+library(ggmap)
+library(source.gist)
+library(rworldmap)
+library("Hmisc")
+library(base)
+
+dat <- read.csv ("cleanwithGDP.csv",header=TRUE, stringsAsFactors=FALSE, fileEncoding="latin1")
+datc <- dat
+variable.names(datc)
+
+########################################################################
+#### AREA AFFECTED
+# Let's see how the distribution of affected sqkm range. 
+areaInterval <- cut2(datc$affectedSqKm, c(10000,50000,100000,10000000))
+table(areaInterval)
+
+# Let's divide affected area into small, medium, large, or very large intervals. 
+datc$affected <- ifelse(datc$affectedSqKm < 10000, "Small", ifelse(datc$affectedSqKm < 50000, "Medium", ifelse(datc$affectedSqKm < 100000, "Large", "Very Large")))
+datc$affected = factor(datc$affected,levels=c("Small", "Medium", "Large", "Very Large"), ordered = TRUE) 
+table(datc$affected)  
+########################################################################
+#### People Dead
+table(cut2(datc$peopleDead, g = 10))
+deadInterval <- cut2(datc$peopleDead, c(10,50,100,10000000))
+table(deadInterval)
+
+# Let's divide people dead into intervals
+datc$dead <- ifelse(datc$peopleDead < 10, "Under 10", ifelse(datc$peopleDead < 50, "10-50", ifelse(datc$peopleDead < 100, "50-100", "Over 100")))
+datc$dead = factor(datc$dead,levels=c("Under 10", "10-50","50-100","Over 100"), ordered = TRUE) 
+table(datc$dead)  
+
+########################################################################
+#### People displaced
+table(cut2(datc$peopleDisplaced, g = 10))
+displacedInterval <- cut2(datc$peopleDisplaced, c(30,5000,100000,100000000))
+table(displacedInterval)
+
+# Let's divide people displaced into intervals
+datc$displaced <- ifelse(datc$peopleDisplaced < 30, "Under 30", ifelse(datc$peopleDisplaced < 5000, "30-5000", ifelse(datc$peopleDisplaced < 100000, "5000-100000", "Over 100000")))
+table(datc$displaced)  
+datc$displaced = factor(datc$displaced,levels=c("Under 30", "30-5000","5000-100000","Over 100000"), ordered = TRUE) 
+
+
+########################################################################
+#### Duration
+table(cut2(datc$durationDays, g = 10))
+durationInterval <- cut2(datc$durationDays, c(5, 10, 20, 500))
+table(durationInterval)
+
+# Let's divide duration into intervals
+datc$duration <- ifelse(datc$durationDays < 5, "Under 5", ifelse(datc$durationDays < 10, "5-10", ifelse(datc$durationDays < 20, "10-20", "Over 20")))
+table(datc$duration)  
+datc$duration = factor(datc$duration,levels=c("Under 5", "5-10","10-20","Over 20"), ordered = TRUE) 
+
+#########################################################################
+table(datc$Income.Group.OECD)
+datc$incomeGroup <- datc$Income.Group.OECD
+datc$incomeGroup = factor(datc$incomeGroup, levels = c("Low income", "Lower middle income", "Upper middle income","High income: nonOECD", "High income: OECD"), ordered = TRUE)
+table(datc$incomeGroup)
+
+datc$GDPlevel <- ifelse(datc$Income.Group.OECD == "High income: OECD", 5, 
+                        ifelse(datc$Income.Group.OECD == "High income: nonOECD", 4,
+                               ifelse(datc$Income.Group.OECD == "Upper middle income", 3,
+                                      ifelse(datc$Income.Group.OECD == "Lower middle income", 2, 1))))
+table(datc$GDPlevel)
+
+
+
+#########################################################################
+#########################################################################
+#########################################################################
+#########################################################################
+#########################################################################
+#plots
+
+
+#GDP rank by region
+#North America has high GDP. Sub-saharan africa seems to have low GDP. 
+bwplot(~datc$GDPrank|factor(datc$Region),data=datc,col="blue",
+       main="GDP rank by region")
+#income group by region
+#North America has many high income group countries, whereas south asia and sub-saharan africa has many low-income countries. 
+bwplot(~datc$incomeGroup|factor(datc$Region),data=datc,col="blue",
+       main="income group by region")
+
+# People displacement and country income group. 
+dotplot(datc$peopleDisplaced ~ datc$magnitude | datc$incomeGroup, data = datc)
+dotplot(datc$displaced ~ datc$magnitude | datc$incomeGroup, data = datc)
+
+# People dead and country income group. 
+dotplot(datc$peopleDead ~ datc$magnitude | datc$incomeGroup, data = datc)
+dotplot(datc$dead ~ datc$magnitude | datc$incomeGroup, data = datc)
+
+# Magnitude and affected square km are positively correlated in a S shaped curve. 
+# dotplot(datc$affectedSqKm ~ datc$magnitude | datc$Region, data = datc)
+dotplot(datc$affected ~ datc$magnitude | datc$Region, data = datc)
+
+# In North America Europe, Middle East and North Africa, 
+# less people were likely to be dead regardless of magnitude and squaremeter affected
+# In South Africa, more people were likely to be dead when affected squaremeter was larger.  
+dotplot(datc$affectedSqKm ~ datc$dead | datc$Region, data = datc) 
+dotplot(datc$affectedSqKm ~ datc$displaced | datc$Region, data = datc)
+
+dotplot(datc$magnitude ~ datc$dead | datc$Region, data = datc)
+dotplot(datc$magnitude ~ datc$displaced | datc$Region, data = datc)
+
+dotplot(datc$magnitude ~ datc$dead | datc$incomeGroup, data = datc)
+dotplot(datc$magnitude ~ datc$displaced | datc$incomeGroup, data = datc)
+
+# For high income countries, less people died regardless of affected squaremeter or magnitude. 
+# For less than high income countries, more people were prone to die at higher squarementer and magnitude. 
+dotplot(datc$affectedSqKm ~ datc$dead | datc$incomeGroup, data = datc)
+dotplot(datc$affectedSqKm ~ datc$displaced | datc$incomeGroup, data = datc)
+
+
+bwplot(~datc$displaced|factor(datc$incomeGroup),data=datc,col="blue",
+       main="Displacement by Country")
+bwplot(~datc$dead|factor(datc$incomeGroup),data=datc,col="blue",
+       main="Number Dead by Country")
+
+
+dotplot(datc$dead ~ datc$GDPrank | datc$Region, data = datc) 
+dotplot(datc$affected ~ datc$GDPrank | datc$Region, data = datc)
+
+#magnitude and affected area by region
+#monsoons seem to bring high magnitude floods. 
+bwplot(~datc$magnitude|factor(datc$mainCause1),data=datc,col="blue",
+       main="magnitude by main cause")
+
+#monsoons seem to affect large regions
+#landslides seem to affect small regions
+#tsunami seems to affect wide array of regions. 
+bwplot(~datc$affected|factor(datc$mainCause1),data=datc,col="blue",
+       main="affected area by main cause")
+
+# tsunamis seem to kill many people. 
+#snow/icemelt seem to usually not kill many. 
+bwplot(~datc$dead|factor(datc$mainCause1),data=datc,col="blue",
+       main="death by main cause")
+#hurricanes and monsoons seem to displace a lot of people. 
+#landslide and avalanches seem to now displace many. 
+bwplot(~datc$displaced|factor(datc$mainCause1),data=datc,col="blue",
+       main="displacement by main cause")
+
+dotplot(datc$damageUsd ~ datc$incomeGroup | datc$Region, data = datc) 
+
+
+
+#main causes by region. 
+#stacked histogram. diff lengths. 
+#East Asia seems to have predominantly many floods. 
+hist <- ggplot(datc, aes(x = datc$Region, fill = datc$mainCause1))
+hist + geom_bar(color = "black", aes(fill = datc$mainCause1, position = "fill"))+
+  labs(title = "Main Causes by Region", x = "Region", y = "Percent") + 
+  scale_fill_discrete(name="Main Causes") + guides(fill = guide_legend(reverse=TRUE))
+
+
+#equal height
+#Main cause seems to be Heavy Rain, except for South Asia where Monsoon also seems to be a leading cause. 
+#East Asia & Pacific also had some Trophical Storms. 
+hist2 <- ggplot(datc, aes(x = datc$Region))
+hist + geom_bar(color = "black", aes(fill = datc$mainCause1), position = "fill")+
+  labs(title = "Main Causes by Region", x = "Region", y = "Percent") + 
+  scale_fill_discrete(name="Main Causes") + guides(fill = guide_legend(reverse=TRUE))
+
+
+###########################################################################################
+# other ideas: radar chart? 
+# http://www.cmap.polytechnique.fr/~lepennec/R/Radar/RadarAndParallelPlots.html
+# can we throw in a bubble graph?
+###########################################################################################
+#mapping
+
+library(plotly)
+library(ggplot2)
+library(package = "lattice")
+library(ggmap)
+library(source.gist)
+library(rworldmap)
+
+dat <- read.csv ("cleanwithGDP.csv",header=TRUE, stringsAsFactors=FALSE, fileEncoding="latin1")
+datc <- dat
+variable.names(datc)
+
+
+library(rworldmap)
+
+library(maps)
+library(ggplot2)
+world_map <- map_data("world")
+p <- ggplot() + coord_fixed() + xlab("") + ylab("")
+
+base_world_messy <- p + geom_polygon(data=world_map, aes(x=long, y=lat, group=group), 
+                                     colour="light green", fill="light green")
+
+base_world_messy
+cleanup <- 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = 'white', colour = 'white'), 
+        axis.line = element_line(colour = "white"), legend.position="none",
+        axis.ticks=element_blank(), axis.text.x=element_blank(),
+        axis.text.y=element_blank())
+
+datc1 <- datc[1:500,]
+
+base_world <- base_world_messy + cleanup
+
+map_data <- 
+  base_world +
+  geom_point(data=datc1, 
+             aes(x=centroidX, y=centroidY), colour="Deep Pink", 
+             fill="Pink",pch=21, size=5, alpha=I(0.7))
+variable.names(datc1)
+datc1$Income.Group <- datc1$Income.Group.OECD 
+#map_data_coloured <- base_world +
+#  geom_point(data=datc1, 
+#             aes(x=centroidX, y=centroidY, colour=datc$Income.Group), size=3, alpha=I(0.7))
+
+#map_data_coloured
+
+#flood causes and affected sqkm
+map_data_sized <- 
+  base_world +
+  geom_point(data=datc1, 
+             aes(x=centroidX, y=centroidY, colour=mainCause1, size=affectedSqKm), alpha=I(0.7)) 
+
+map_data_sized
+
+#magnitude and affectedsqkm
+MagAndSqkm <- 
+  base_world +
+  geom_point(data=datc1, 
+             aes(x=centroidX, y=centroidY, colour=magnitude, size=affectedSqKm), alpha=I(0.7)) 
+MagAndSqkm
+
+
+map_data_sized <- 
+  base_world +
+  geom_point(data=datc1, 
+             aes(x=centroidX, y=centroidY, colour=mainCause1, size=damageUsd), alpha=I(0.7)) 
+
+map_data_sized
+
+
+
+###########################################################################################
+###########################################################################################
+
+###########################################################################################
+# other ideas: radar chart? 
+# http://www.cmap.polytechnique.fr/~lepennec/R/Radar/RadarAndParallelPlots.html
+# can we throw in a bubble graph?
+###########################################################################################
+
+
+
+
+
+
+
+```
+
